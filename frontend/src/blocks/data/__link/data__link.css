@@ -1,0 +1,16 @@
+.data__link {
+  margin-left: 6px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.data__link:hover {
+  opacity: 0.8;
+}

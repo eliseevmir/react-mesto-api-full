@@ -1,0 +1,12 @@
+.cards__like-number {
+  margin-top: 3px;
+  max-width: 10px;
+  max-height: 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+}

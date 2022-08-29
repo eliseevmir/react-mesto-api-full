@@ -1,0 +1,15 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+  gap: 20px 17px;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+@media screen and (max-width: 520px) {
+  .cards {
+    gap: 14px 10px;
+  }
+}

@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #545454;
+  max-width: 880px;
+  min-height: 74px;
+  margin: 0 auto;
+  padding-top: 45px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    width: calc(100% - 160px * 2);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    width: calc(100% - 120px * 2);
+    padding-top: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: calc(100% - 27px * 2);
+    min-height: 56px;
+  }
+}

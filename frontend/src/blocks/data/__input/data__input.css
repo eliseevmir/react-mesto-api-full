@@ -1,0 +1,18 @@
+.data__input {
+  border: none;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  color: #ffffff;
+  background-color: transparent;
+  outline: none;
+  width: 378px;
+  height: 27px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.data__input:nth-child(2) {
+  margin-top: 30px;
+}
