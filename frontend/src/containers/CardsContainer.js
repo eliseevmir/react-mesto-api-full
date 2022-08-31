@@ -93,7 +93,6 @@ const CardsContainer = () => {
     api
       .changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
-        console.log();
         setCardsPage((oldCardsPage) => {
           return oldCardsPage.map((item) =>
             item._id === card._id ? newCard : item

@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "https://api.mesto.vb.nomoredomains.sbs";
 
 function checkResponse(res) {
   if (res.ok) return res.json();

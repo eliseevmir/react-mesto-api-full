@@ -32,13 +32,13 @@ class Api {
   changeLikeCardStatus(cardId, noIsLiked) {
     return noIsLiked
       ? fetch(`${this._baseUrl}cards/${cardId}/likes`, {
-          method: "PUT",
-          headers: this._headers,
-        }).then(this._checkResponse)
+        method: "PUT",
+        headers: this._headers,
+      }).then(this._checkResponse)
       : fetch(`${this._baseUrl}cards/${cardId}/likes`, {
-          method: "DELETE",
-          headers: this._headers,
-        }).then(this._checkResponse);
+        method: "DELETE",
+        headers: this._headers,
+      }).then(this._checkResponse);
   }
 
   changeAvatarProfile(urlAvatar) {
@@ -75,9 +75,9 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "https://nomoreparties.co/v1/cohort-41/",
+  baseUrl: "https://api.mesto.vb.nomoredomains.sbs",
   headers: {
-    authorization: "5129c1ae-33e1-40e7-9179-9f9bc64e6a51",
+    authorization: localStorage.getItem("token"),
     "Content-Type": "application/json",
   },
 });
