@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
+const corsReq = require('./src/middlewares/cors');
 const routerUsers = require('./src/routes/users');
 const routerCards = require('./src/routes/cards');
 const { requestLogger, errorLogger } = require('./src/middlewares/logger');
-const corsReq = require('./src/middlewares/cors');
 
 const handlerError = require('./src/errors/HandlerError');
 const NotFoundError = require('./src/errors/NotFoundError');
@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
-app.use(corsReq);
+app.use(corsReq());
 
 app.get('/crash-test', () => {
   setTimeout(() => {
