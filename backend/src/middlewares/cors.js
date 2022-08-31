@@ -1,6 +1,6 @@
 const allowedCors = [
-  'http://y.p.mesto.nomoredomains.sbs',
-  'https://y.p.mesto.nomoredomains.sbs',
+  'http://mesto.vb.nomoredomains.sbs',
+  'https://mesto.vb.nomoredomains.sbs',
   'localhost: 3000',
 ];
 
