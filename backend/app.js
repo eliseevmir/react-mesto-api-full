@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
-const corsReq = require('./src/middlewares/cors');
+const cors = require('cors');
 const routerUsers = require('./src/routes/users');
 const routerCards = require('./src/routes/cards');
 const { requestLogger, errorLogger } = require('./src/middlewares/logger');
@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
-app.use(corsReq());
+app.use(cors());
 
 app.get('/crash-test', () => {
   setTimeout(() => {
