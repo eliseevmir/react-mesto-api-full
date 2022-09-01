@@ -132,8 +132,8 @@ module.exports.userMe = (req, res, next) => {
 
   User.findOne({ _id })
     .orFail(new NotFoundError('Пользователь по указанному _id не найден'))
-    .then((user) => {
-      res.status(STATUS_CODE_200).send(user);
+    .then((data) => {
+      res.status(STATUS_CODE_200).send({ data }); /// /////////////////////////////
     })
     .catch(next);
 };
