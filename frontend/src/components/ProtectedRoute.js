@@ -15,18 +15,20 @@ function ProtectedRoute({ component: Component, ...props }) {
       auth
         .getContent(jwt)
         .then((res) => {
+          console.log(res)
           dispatch({
             type: "setUser",
             payload: {
               loggedIn: true,
-              email: res.data.email,
+              email: res.email,
             },
           });
+          console.log(state)
           history.push("/");
         })
         .catch((res) => console.log(res));
     }
-  }, [dispatch, history]);
+  }, [dispatch, history, state]);
 
   useEffect(() => {
     tokenCheck();
