@@ -3,7 +3,8 @@ const allowedCors = [
   'https://mesto.vb.nomoredomains.sbs',
   'http://api.mesto.vb.nomoredomains.sbs',
   'https://api.mesto.vb.nomoredomains.sbs',
-  'localhost: 3000',
+  'http://localhost: 3000',
+  'https://localhost: 3000',
 ];
 
 module.exports = ((req, res, next) => {

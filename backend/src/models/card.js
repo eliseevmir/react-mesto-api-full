@@ -13,24 +13,21 @@ const cardSchema = new mongoose.Schema({
     required: true,
     validate: [isURL, 'Некорректная ссылка'],
   },
+
   owner: {
-    _id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
+    required: true,
+  },
+
+  likes: [
+    {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'user',
-      required: true,
+      default: [],
     },
-  },
-  likes: {
-    type: [
-      {
-        id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'user',
-        },
-      },
-    ],
-    default: [],
-  },
+  ],
+
   createdAt: {
     type: Date,
     dafault: Date.now,

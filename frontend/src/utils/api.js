@@ -67,15 +67,16 @@ class Api {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        link: link,
+        name,
+        link,
       }),
     }).then(this._checkResponse);
   }
 }
 
 export const api = new Api({
-  baseUrl: "https://api.mesto.vb.nomoredomains.sbs/",
+  // baseUrl: "https://api.mesto.vb.nomoredomains.sbs/",
+  baseUrl: "http://localhost:8080/",
   headers: {
     authorization: `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",

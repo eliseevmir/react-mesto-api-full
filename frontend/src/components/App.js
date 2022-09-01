@@ -45,7 +45,7 @@ function App() {
     auth
       .register(password, email)
       .then((res) => {
-        if (res.data) {
+        if (res) {
           setInputValue({ password: "", email: "" });
           popupStatusVisible(
             true,

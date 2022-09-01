@@ -17,7 +17,7 @@ module.exports.postCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = req.user._id;
   Card.create({ name, link, owner })
-    .then((card) => res.send({ card }))
+    .then((card) => res.send(card))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         next(new BadRequestError('Некорректные данные при создании карточки'));
@@ -49,7 +49,7 @@ module.exports.putLikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Карточка по указанному id не найдена'))
-    .then((card) => res.send({ card }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
@@ -60,6 +60,6 @@ module.exports.putDislikeCard = (req, res, next) => {
     { new: true },
   )
     .orFail(new NotFoundError('Карточка по указанному id не найдена'))
-    .then((card) => res.send({ card }))
+    .then((card) => res.send(card))
     .catch(next);
 };

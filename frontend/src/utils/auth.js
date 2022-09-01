@@ -1,9 +1,9 @@
 export const BASE_URL = "https://api.mesto.vb.nomoredomains.sbs";
+// export const BASE_URL = "http://localhost:8080";
 
 function checkResponse(res) {
   if (res.ok) return res.json();
-
-  return Promise.reject(`Ошибка: ${res.status}`);
+  return Promise.reject(`Ошибка: ${res.statusText}`);
 }
 
 export const register = (password, email) => {
