@@ -133,7 +133,7 @@ module.exports.userMe = (req, res, next) => {
   User.findOne({ _id })
     .orFail(new NotFoundError('Пользователь по указанному _id не найден'))
     .then((user) => {
-      res.status(STATUS_CODE_200).send({ user });
+      res.status(STATUS_CODE_200).send(user);
     })
     .catch(next);
 };
