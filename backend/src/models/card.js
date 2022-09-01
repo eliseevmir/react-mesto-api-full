@@ -14,15 +14,19 @@ const cardSchema = new mongoose.Schema({
     validate: [isURL, 'Некорректная ссылка'],
   },
   owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'user',
-    required: true,
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user',
+      required: true,
+    },
   },
   likes: {
     type: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+        id: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'user',
+        },
       },
     ],
     default: [],

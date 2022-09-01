@@ -1,11 +1,11 @@
-import {useContext} from "react";
+import { useContext } from "react";
 import Card from "./Card";
 
 import { CurrentUserContext } from "../context/CurrentUserContext";
 
 function Main({ cardsPage, onCardLike, onCardDelete, ...props }) {
-  const {state} = useContext(CurrentUserContext);
-  const {name, about, avatar} = state
+  const { state } = useContext(CurrentUserContext);
+  const { name, about, avatar } = state
   return (
     <main>
       <section className="profile">

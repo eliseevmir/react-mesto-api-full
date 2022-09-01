@@ -79,6 +79,7 @@ const CardsContainer = () => {
     api
       .changeAvatarProfile(avatar)
       .then((res) => {
+        console.log(res)
         dispatch({
           type: "setUser",
           payload: res,

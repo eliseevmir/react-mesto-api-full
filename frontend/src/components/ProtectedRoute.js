@@ -15,7 +15,6 @@ function ProtectedRoute({ component: Component, ...props }) {
       auth
         .getContent(jwt)
         .then((res) => {
-          console.log(res)
           dispatch({
             type: "setUser",
             payload: {
@@ -23,12 +22,11 @@ function ProtectedRoute({ component: Component, ...props }) {
               email: res.email,
             },
           });
-          console.log(state)
           history.push("/");
         })
         .catch((res) => console.log(res));
     }
-  }, [dispatch, history, state]);
+  }, [dispatch, history]);
 
   useEffect(() => {
     tokenCheck();

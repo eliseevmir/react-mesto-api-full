@@ -82,7 +82,7 @@ module.exports.patchUserAvatar = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail(new NotFoundError('Пользователь по указанному _id не найден'))
-    .then((user) => res.send({ user }))
+    .then((user) => res.send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         next(new BadRequestError('Не вернные данные'));
